@@ -7,6 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Find() Method</h1>
+    <p>Find an element in an array
+        The find() method returns the first element in an array that passes a test function. The following shows the syntax of the find() method:        
+        Return value
+The find() executes the callback function for each element in the array until the callback returns a truthy value. 
+
+    </p>
+        <span>Syntex: find(callback(element[, index[, array]])[, thisArg])
+            Arguments
+            The find() accepts two arguments: a callback function and an optional value to use for the this inside the callback function.
+            // Arrow function
+            find((element) => { /* … */ })
+            find((element, index) => { /* … */ })
+            find((element, index, array) => { /* … */ })
+            
+            // Callback function
+            find(callbackFn)
+            find(callbackFn, thisArg)
+            
+            // Inline callback function
+            find(function (element) { /* … */ })
+            find(function (element, index) { /* … */ })
+            find(function (element, index, array) { /* … */ })
+            find(function (element, index, array) { /* … */ }, thisArg)
+            
+            
+            1) callback
+            The callback is a function that executes each element of the array. It takes three arguments:
+            
+            element is the current element.
+            index the index of the current element.
+            array the array that the find() was called upon.
+            2) thisArg
+            The thisArg is the object used as this inside the callback.
+            
+            </span>
 </body>
 </html>
