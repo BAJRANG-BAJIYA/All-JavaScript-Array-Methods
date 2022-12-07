@@ -7,6 +7,61 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Reduce() Method</h2>
+    <p> Reduce elements of an array to a value.
+        The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+        
+        The reducer walks through the array element-by-element, at each step adding the current array value to the result from the previous step (this result is the running sum of all the previous steps) — until there are no more elements to add.
+        </p>
+    <span>Syntex: array.reduce(callbackFn [, initialValue])
+        // Arrow function
+        reduce((accumulator, currentValue) => { /* … */ })
+        reduce((accumulator, currentValue, currentIndex) => { /* … */ })
+        reduce((accumulator, currentValue, currentIndex, array) => { /* … */ })
+        
+        reduce((accumulator, currentValue) => { /* … */ }, initialValue)
+        reduce((accumulator, currentValue, currentIndex) => { /* … */ }, initialValue)
+        reduce((accumulator, currentValue, currentIndex, array) => { /* … */ }, initialValue)
+
+        // Callback function
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+
+// Inline callback function
+reduce(function (accumulator, currentValue) { /* … */ })
+reduce(function (accumulator, currentValue, currentIndex) { /* … */ })
+reduce(function (accumulator, currentValue, currentIndex, array) { /* … */ })
+
+reduce(function (accumulator, currentValue) { /* … */ }, initialValue)
+reduce(function (accumulator, currentValue, currentIndex) { /* … */ }, initialValue)
+reduce(function (accumulator, currentValue, currentIndex, array) { /* … */ }, initialValue)
+
+        </span>
+        <p>The reduce() method is an iterative method. It runs a "reducer" callback function over all elements in the array, in ascending-index order, and accumulates them into a single value. Every time, the return value of callbackFn is passed into callbackFn again on next invocation as accumulator. The final value of accumulator (which is the value returned from callbackFn on the final iteration of the array) becomes the return value of reduce().
+
+            Explaination:
+            //Suppose that you have an array of numbers, like this:
+            let numbers = [1, 2, 3];
+            
+            //and you want to calculate the total of elements of the array.
+            //Typically, you use a for loop to iterate over the elements and add them up as shown in the following example:
+            
+            let numbers = [1, 2, 3];
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            
+            console.log  //6
+            
+            Now with the reduce()
+            
+            let numbers = [1, 2, 3];
+            let sum = numbers.reduce(function (previousValue, currentValue) {
+                return previousValue + currentValue;
+            });
+            
+            console.log(sum);  //6
+            </p>
 </body>
 </html>
