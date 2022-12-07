@@ -7,6 +7,73 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Filter() Method</h2>
+    <p>filter elements in an array
+        The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+        </p>
     
+    <span>Syntex:
+        arrayObject.filter(callback, contextObject);
+        
+        // Arrow function
+        filter((element) => { /* … */ })
+        filter((element, index) => { /* … */ })
+        filter((element, index, array) => { /* … */ })
+        </span>
+        <p>
+            // Callback function
+filter(callbackFn)
+filter(callbackFn, thisArg)
+
+// Inline callback function
+filter(function (element) { /* … */ })
+filter(function (element, index) { /* … */ })
+filter(function (element, index, array) { /* … */ })
+filter(function (element, index, array) { /* … */ }, thisArg)
+
+The filter() method creates a new array with all the elements that pass the test implemented by the callback() function.
+
+Suppose you have an array of city objects where each object contains two properties: name and population.
+
+let cities = [
+    {name: 'Los Angeles', population: 3792621},
+    {name: 'New York', population: 8175133},
+    {name: 'Chicago', population: 2695598},
+    {name: 'Houston', population: 2099451},
+    {name: 'Philadelphia', population: 1526006}
+];
+
+//To find the city whose population is greater than 3 million, you typically loop over the array elements
+using a for loop and test if the value of the population property satisfies the condition, like this:
+
+let bigCities = [];
+for (let i = 0; i < cities.length; i++) {
+    if (cities[i].population > 3000000) {
+        bigCities.push(cities[i]);
+    }
+}
+console.log(bigCities);
+OUTPUT:[
+  { name: 'Los Angeles', population: 3792621 },
+  { name: 'New York', population: 8175133 }
+]
+
+JavaScript Array provides the filter() method that allows you to do this task in a shorter and cleaner way.
+
+The following example returns the same result as the example above:
+
+let bigCities = cities.filter(function (e) {
+    return e.population > 3000000;
+});
+console.log(bigCities);
+//In this example, we call the filter() method of the cities array object and pass a function that tests each element.
+
+//Starting with ES6, you can use the arrow function to make it more concise:
+
+let bigCities = cities.filter(city => city.population > 3000000);
+
+console.log(bigCities);
+
+        </p>
 </body>
 </html>
