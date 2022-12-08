@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="./some.js"></script>
+    <title>Some Method</title>
 </head>
 <body>
-    <h2></h2>
-    <p></p>
-    <span></span>
+    <h2>some() Method</h2>
+    <p>check if at least one element in an array passed a test.
+        Sometimes, you want to check if an array has at least one element that meets a specified condition.
+        The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+        
+        The some() method is an iterative method. It calls a provided callbackFn function once for each element in an array, until the callbackFn returns a truthy value. If such an element is found, some() immediately returns true and stops iterating through the array. Otherwise, if callbackFn returns a falsy value for all elements, some() returns false
+        </p>
+    <span>Syntex: arrayObject.some(callback[, thisArg]);
+
+        The some() method accepts two arguments:
+        </span>
+        <p>With standard method For example, to check if the following array has at least one element less than 5:
+
+            let marks = [ 4, 5, 7, 9, 10, 3 ];
+            
+            let lessThanFive = false;
+            
+            for (let index = 0; index < marks.length; index++) {
+                if (marks[index] < 5) {
+                    lessThanFive = true;
+                    break;
+                }
+            }
+            
+            console.log(lessThanFive);    //true
+            
+            The Array type provides you with an instance method called some() that allows you to test if an array has at least one element that meets a condition.
+            let marks = [ 4, 5, 7, 9, 10, 3 ];
+            
+            lessThanFive = marks.some(function(e) {
+                return e < 5;
+            });
+            
+            console.log(lessThanFive);   //true
+            
+            </p>
 </body>
 </html>

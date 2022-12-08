@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="./every.js"></script>
+    <title>Every method</title>
 </head>
 <body>
-    
+    <h2>Every() method</h2>
+    <p>check if every element in an array passes a test.
+        The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+        Sometimes, you need to test whether every element of an array satisfies a specified condition.
+        </p>
+    <span>Syntex: arrayObject.every(callback[, thisArg])
+        The every() method accepts two named arguments: callback and thisArg.
+        </span>
+        <p>Typically, you use a  for loop to iterate all elements and check each individual element against the condition. Suppose that you have an array numbers with three elements:
+
+            let numbers = [1, 3, 5];
+            //The following code checks if every element in the numbers array is greater than zero:
+            let numbers = [1, 3, 5];
+            let result = true;
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] <= 0) {
+                    result = false;
+                    break;
+                }
+            }
+            console.log(result);    //true
+            
+            //Starting from ES5, JavaScript Array type provides a method every() that tests every element in an array.
+            let numbers = [1, 3, 5];
+            let result = numbers.every(function (e) {
+                return e > 0;
+            });
+            
+            console.log(result);   //true
+            
+            //with ES6 arrow function
+            let numbers = [1, 3, 5];
+            
+            let result = numbers.every( e  => e > 0);
+            
+            console.log(result); //true
+            </p>
 </body>
 </html>
